@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy New Year 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+/* BACKGROUND */
+body{
+  min-height:100vh;
+  background:
+    linear-gradient(rgba(255,214,232,.75),rgba(224,247,255,.75)),
+    url("Plusle and Minun.jpg");
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  color:#333;
+  overflow-x:hidden;
+}
+
+/* NAVBAR */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 40px;
+  background:rgba(255,255,255,.6);
+  backdrop-filter:blur(10px);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+.logo-container{
+  display:flex;
+  align-items:center;
+}
+
+.logo{
+  width:60px;
+  margin-right:10px;
+}
+
+.pagename{
+  font-size:1.3rem;
+  font-weight:700;
+  color:#ff5fa2;
+}
+
+.navlinks a{ 
+  text-decoration:none; 
+  margin-left:25px; 
+  color:#333; 
+  font-size:.95rem 
+} 
+.navlinks a:hover{ 
+  padding:14px 32px; 
+  border:none; 
+  border-radius:30px; 
+  font-size:1rem; 
+  cursor:pointer; 
+  background:linear-gradient(90deg,#ff5fa2,#6dd5ed); 
+  color:#fff; 
+  transition:.3s 
+}
+
+/* SECTIONS */
+section{
+  padding:80px 20px;
+  max-width:1100px;
+  margin:auto;
+  text-align:center;
+  position:relative;
+  z-index:1;
+}
+
+/* HERO */
+.hero{
+  min-height:90vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.hero h1{
+  font-size:3rem;
+  background:linear-gradient(90deg,#ff5fa2,#6dd5ed);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+  max-width:900px;
+  margin:25px 0;
+  line-height:1.8;
+}
+
+.btn{
+  padding:14px 32px; 
+  border:none; 
+  border-radius:30px; 
+  font-size:1rem; 
+  cursor:pointer; 
+  background:linear-gradient(90deg,#ff5fa2,#6dd5ed); 
+  color:#fff; 
+  transition:.3s
+}
+
+.btn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+/* MESSAGE BOX */
+.message-box{
+  background:rgba(255,255,255,.7);
+  border-radius:20px;
+  padding:40px;
+  box-shadow:0 15px 40px rgba(0,0,0,.1);
+  text-align:left;
+}
+
+/* TYPING CURSOR */
+.cursor{
+  display:inline-block;
+  margin-left:4px;
+  animation:blink 1s infinite;
+}
+
+@keyframes blink{
+  0%,50%{opacity:1;}
+  51%,100%{opacity:0;}
+}
+
+/* FLOATING HEARTS */
+.heart{
+  position:fixed;
+  font-size:18px;
+  animation:floatUp 5s linear infinite;
+  opacity:.8;
+}
+
+@keyframes floatUp{
+  from{transform:translateY(100vh);}
+  to{transform:translateY(-10vh);}
+}
+
+/* ANIMATIONS */
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-12px);}
+  100%{transform:translateY(0);}
+}
+
+@keyframes glow{
+  from{filter:drop-shadow(0 0 5px rgba(255,95,162,.3));}
+  to{filter:drop-shadow(0 0 15px rgba(255,95,162,.7));}
+}
+
+@keyframes bounce{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-6px);}
+}
+/* LOVE POPUP */
+.love-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+  z-index: 999;
+}
+
+.love-popup.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.popup-content {
+  background: linear-gradient(135deg,#ff9fcf,#9ee7ff);
+  padding: 40px 50px;
+  border-radius: 25px;
+  text-align: center;
+  animation: pop 0.5s ease;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+.popup-content h1 {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.popup-content p {
+  margin: 15px 0 25px;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.popup-content button {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  background: #fff;
+  color: #ff5fa2;
+}
+
+@keyframes pop {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  font-size:.9rem;
+  opacity:.7;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero h1{font-size:2.2rem;}
+  .navlinks,
+  .side-stack,
+  .center-image{display:none;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+  <div class="logo-container">
+    <img src="PM.png" class="logo">
+    <div class="pagename">For my Plusle 💖</div>
+  </div>
+  <div class="navlinks">
+    <a href="#home">Home</a>
+    <a href="#message">Message</a>
+  </div>
+</div>
+
+<section class="hero" id="home">
+  <h1>Happy New Year, My Plusleee !! (≧ᗜ≦)</h1>
+  <p>
+    Another year begins, and I just want you to know that you are my favorite part that happened to me this year. <br>
+    I made this special website just for you 💕
+  </p>
+  <button class="btn" onclick="startMessage()">Read My Message 💌</button>
+</section>
+
+<section id="message">
+  <div class="message-box">
+    <p><span id="text"></span><span class="cursor">|</span></p>
+  </div>
+</section>
+
+<!-- FINAL POPUP -->
+<div class="love-popup" id="lovePopup">
+  <div class="popup-content">
+    <h1>I love you and I miss you 💖</h1>
+    <p>Always. In all ways.</p>
+    <button onclick="closePopup()">Close 🤍</button>
+  </div>
+</div>
+
+<footer>Happy New Year 💫 Always yours.</footer>
+
+<script>
+const message =
+"HAPPY NEW YEAR MY PLUSLEEEE!!!!!! 🎉💖\n\n Nakatalon kana ba? Malay mo baka tumangkad kana this year HAHAHAHAHAHAHAHA dejoke lang \n\n" +
+"Well kidding aside po, I would like to take this moment to send you this very simple website just for you as a form of how thankful and grateful I am to have you. \n\n" +
+"As the year comes to a close, I’ve been doing a lot of reflecting, and somehow, you keep being one of the best parts of my thoughts. This year had its ups and downs, moments of stress, growth, and lessons—but meeting you and having you in my life made everything feel lighter. You became my comfort in ways I didn’t expect, and I’m genuinely grateful for that.\n\n" +
+
+"Thank you for always being there for me whenever I have problems here sa house, sa school, or personal problems. Thank you for being understanding. Thank you for being my comfort, for your love and care. Thank you for eveything. 🤍 \n\n" +
+"What we have may not have a clear label yet, but what I feel is real. I appreciate every conversation we’ve shared, whether it was something deep or something simple, every laugh that came naturally, and even the quiet moments where just knowing you were there was enough. You showed me patience, warmth, and understanding, and those are things I hold close to my heart. \n\n" +
+"As we step into this new year, I don’t want to make big promises I can’t keep—but I do want you to know that I choose sincerity. I choose honesty, effort, and care. I hope this year brings you happiness, good health, and success in everything you work hard for. You deserve all the good things life has to offer. Always remember that I will always be here for you. I'll support you on your goals and dreams in life. Remember also that I am not just here for your good days but even in your bad days.  \n\n" +
+"If the new year allows it, I hope we continue walking forward together—learning more about each other, growing at our own pace, and building something meaningful step by step. No pressure, no rush, just genuine moments and shared intentions. Thank you for being you, and for making my year better just by being in it. Here’s to a new beginning, new memories, and hopefully, many more moments with you."
+let index = 0;
+let started = false;
+
+function startMessage(){
+  document.getElementById("message").scrollIntoView({behavior:"smooth"});
+  if(!started){
+    started = true;
+    typeText();
+  }
+  spawnHeart();
+}
+
+function typeText(){
+  if(index < message.length){
+    document.getElementById("text").innerText += message.charAt(index);
+    index++;
+    setTimeout(typeText,40);
+  }
+}
+
+function spawnHeart(){
+  const h = document.createElement("div");
+  h.className = "heart";
+  h.innerText = "💖";
+  h.style.left = Math.random()*100 + "vw";
+  h.style.animationDuration = 3 + Math.random()*3 + "s";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+}
+
+/* PARALLAX EFFECT */
+window.addEventListener("scroll",()=>{
+  document.querySelectorAll(".side-stack img").forEach(img=>{
+    img.style.transform = `translateY(${window.scrollY * 0.03}px)`;
+  });
+});
+</script>
+<script>
+function typeText(){
+  if(index < message.length){
+    document.getElementById("text").innerText += message.charAt(index);
+    index++;
+    setTimeout(typeText,40);
+  } else {
+    setTimeout(() => {
+      document.getElementById("lovePopup").classList.add("show");
+    }, 800); // delay before popup
+  }
+}
+
+function closePopup(){
+  document.getElementById("lovePopup").classList.remove("show");
+}
+</script>
+
+
+</body>
+</html>
